@@ -1,18 +1,20 @@
 import 'dart:io';
 
+import 'package:dart_basics/main.dart';
+
 void main(List<String> arguments) {
-  // TODO: Instancia [MainConverter]
+  final conversor = MainConverter();
   print("Convertir:");
   print("1. Binario a Decimal");
   print("2. Decimal a Binario");
-  // TODO: Lee la entrada del usuario y conviertela en entero
-  if (/* TODO: Escribe la condicion adecuada para ingresar cuando se escoga 'Binario a Decimal' */) {
+  int opcion = int.parse(stdin.readLineSync()!);
+  if (opcion == 1) {
     print("Escribe el numero binario:");
-    // TODO: Lee la entrada del usuario y usa el setter correcto
-    print('Decimal: ${/* TODO: Ejecuta la conversion */}');
-  } else if (/* TODO: Escribe la condicion adecuada para ingresar cuando se escoga 'Decimal a Binario' */) {
+    conversor.binary = stdin.readLineSync();
+    print('Decimal: ${conversor.convertBinary()}');
+  } else if (opcion == 2) {
     print("Escribe el numero decimal:");
-    // TODO: Lee la entrada del usuario y usa el setter correcto
-    print('Binario: ${/* TODO: Ejecuta la conversion */}');
+    conversor.decimal = stdin.readLineSync();
+    print('Binario: ${conversor.convertDecimal()}');
   }
 }
